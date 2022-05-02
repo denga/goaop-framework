@@ -39,4 +39,16 @@ trait SerializableImpl
             $this->$key = $value;
         }
     }
+
+    public function __serialize(): array
+    {
+        return get_object_vars($this);
+    }
+
+    public function __unserialize(array $data): void
+    {
+        foreach ($data as $key => $value) {
+            $this->$key = $value;
+        }
+    }
 }
