@@ -137,7 +137,7 @@ class Enumerator
      */
     protected function getFileFullPath(SplFileInfo $file): string
     {
-        return $file->getRealPath();
+        return $file->getRealPath() ?: '';
     }
 
     /**
